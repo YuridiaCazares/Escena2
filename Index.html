@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Escena 2</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <!-- Assets -->
+        <a-assets>
+            <!-- Texturas -->
+            <img id="textura-pared" src="images/hexagons.png">
+            
+            <!-- Modelos -->
+            <a-asset-item id="modelo-obj" src="Tree1/Tree1.obj"></a-asset-item>
+            <a-asset-item id="modelo-gltf" src="model/model.gltf"></a-asset-item>
+            
+            <!-- Sonido -->
+            <audio id="sonido" src="sonido/sonido.mp3"></audio>
+        </a-assets>
+        
+        <!-- Entorno -->
+        <a-sky color="#87CEEB"></a-sky>
+        
+        <!-- Objetos -->
+        <!-- Objeto con textura -->
+        <a-box position="-2 1 -3" width="2" height="2" depth="2" material="src: #textura-pared"></a-box>
+        
+        <!-- Modelo OBJ -->
+        <a-obj-model src="#modelo-obj" position="0 1 -3" scale="0.02 0.02 0.02"></a-obj-model>
+        
+        <!-- Modelo GLTF -->
+        <a-entity gltf-model="#modelo-gltf" position="2 1 -3" scale="0.1 0.1 0.1"></a-entity>
+        
+        <!-- Sonido -->
+        <a-entity sound="src: #sonido" position="0 1 -4" autoplay="true"></a-entity>
+    </a-scene>
+</body>
+</html>
